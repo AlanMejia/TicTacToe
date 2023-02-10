@@ -1,0 +1,58 @@
+.square {
+    text-align: center;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    vertical-align: top;
+}
+
+.x {
+    background-color: #4CAF50;
+}
+
+.o {
+    background-color: #008CBA;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:hover {
+    background-color: #e7e7e7;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.grid{
+    text-align: center;
+    display:block;
+    margin-top: 3rem;
+}
+
+.row{
+    text-align: center;
+    display:block;
+}
+
+.title {
+    text-align: center;
+    display:block;
+}
+
+.btnOpt{
+    text-align: center;
+    border-radius: 8px;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1rem;
+    border: 2px solid blue;
+    position: relative;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-right: 2rem;
+}

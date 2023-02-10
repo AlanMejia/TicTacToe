@@ -1,0 +1,19 @@
+<h3 class="title">
+  Welcome to Alan Mejia's Tic Tac Toe! <br> 
+  Click on the Tic Tac Toe to start playing or click on the Bot vs Bot button to see bots playing for you!
+</h3>
+<h2 class="title" id="statusArea" >Next player: <span>{{currentPlayer}}</span></h2>
+<h2 class="title" id="winnerArea" >Winner: <span>{{winner}}</span></h2>
+<div class="row">
+  <button class="btnOpt" (click)="reset()">Reset</button>
+  <button class="btnOpt" (click)="playBotVsBot()">Play Bot vs Bot</button>
+</div>
+
+<section class="grid">
+  <div class="row" *ngFor="let row of [0, 3, 6]">
+    <button *ngFor="let col of [0, 1, 2]" (click)="play(row+col)" class="square" 
+    [ngClass]="{'x': squares[row+col].isX, 'o': squares[row+col].isO}">{{squares[row+col].value}}</button>
+  </div>
+</section>
+
+<router-outlet></router-outlet>
