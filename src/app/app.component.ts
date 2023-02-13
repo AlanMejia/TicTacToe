@@ -49,13 +49,14 @@ export class AppComponent {
   }
 
   //function to play randomly bot vs bot (no best path algorithm here, just random)
-  playBotVsBot(){
+  async playBotVsBot(){
     let squareNumbers = new Array();
     while(this.winner == ''){
       const snum =  this.randomIntFromInterval(0,8)
       if(!squareNumbers.includes(snum)){
-        this.play(snum);         
-      }      
+        this.play(snum);        
+        await delay(1000); 
+      }
     }
   }
 
@@ -91,6 +92,10 @@ export class AppComponent {
     }
     return '';
   }
+}
+
+function delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms) );
 }
 
 //Class Square holds the value X or Y as a string and handles holds style for the button
