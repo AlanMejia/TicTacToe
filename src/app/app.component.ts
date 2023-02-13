@@ -50,11 +50,13 @@ export class AppComponent {
 
   //function to play randomly bot vs bot (no best path algorithm here, just random)
   async playBotVsBot(){
-    let squareNumbers = new Array();
-    while(this.winner == ''){
+    let squareNumbers = new Array<number>();
+    while(this.winner == '' && squareNumbers.length < 9){
       const snum =  this.randomIntFromInterval(0,8)
       if(!squareNumbers.includes(snum)){
-        this.play(snum);        
+        console.log('number not in array: ' + snum + ' len: ' + squareNumbers.length);
+        this.play(snum);   
+        squareNumbers.push(snum);     
         await delay(1000); 
       }
     }
