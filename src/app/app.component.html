@@ -1,9 +1,12 @@
-<h3 class="title">
-  Welcome to Alan Mejia's Tic Tac Toe! <br> 
-  Click on the Tic Tac Toe to start playing or click on the Bot vs Bot button to see bots playing for you!
-</h3>
-<h2 class="title" id="statusArea" >Next player: <span>{{currentPlayer}}</span></h2>
-<h2 class="title" id="winnerArea" >Winner: <span *ngIf="winner" style="color:blueviolet" >{{winner}} is the winner!</span></h2>
+<h2 class="title">
+  Welcome to Alan Mejia's Tic Tac Toe! <br><br> 
+  Click on the Tic Tac Toe to start playing or click on the Bot vs Bot button to watch bots playing for you!
+</h2>
+<h2 class="title" id="statusArea" >Next player: <span style="color:green">{{currentPlayer}}</span></h2>
+<h2 class="title" id="winnerArea" >Winner: 
+  <span *ngIf="winner" style="color:blueviolet" >{{winner}} is the winner!</span>
+  <span *ngIf="tied" style="color:blueviolet" >{{tied}}</span>
+</h2>
 <div class="row">
   <button class="btnOpt" (click)="reset()">Reset</button>
   <button class="btnOpt" (click)="playBotVsBot()">Play Bot vs Bot</button>
