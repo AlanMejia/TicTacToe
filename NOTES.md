@@ -1,10 +1,10 @@
-# TicTacToeAlanMejia Notes file for XP Farm
+# TicTacToe AlanMejia's Notes file for XP Farm
 
 Pasting here the comments and main code component, think it's self explanatory, but pls reach out to me with any question on it. 
-It's basically the creation of a matrix of squares, which hold value and position from 0-8. Then if one of the winning combinations match the values, a winner is found.
+It's basically the creation of a matrix of squares, which hold value and position from 0-8. Then if one of the winning combinations match the values, a winner is found. Please find code for file app.component.ts below.
 
 # Code:
-`
+```
 export class AppComponent {
   //Created an array od squares to hold the grid of buttons properties
   squares = new Array<Square>();
@@ -121,4 +121,4 @@ class Square {
     if(this.value=='O') this.isO = true;
   }
 }
-`
+```
