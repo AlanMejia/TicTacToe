@@ -52,10 +52,11 @@ export class AppComponent {
       this.clickedSquares+=1;
     }
     //check if there's a winner already
+    this.winner = this.isWin();
+    //if no winner, the game is tied
     if(this.clickedSquares == 9 && this.winner == ''){
       this.tied = 'The game is tied! No winner this time :)';
     }
-    this.winner = this.isWin();
   }
 
   //function to play randomly bot vs bot (no best path algorithm here, just random)
