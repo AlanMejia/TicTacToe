@@ -14,6 +14,10 @@ export class AppComponent {
   winner = '';
   // holds who is in turn
   currentPlayer = 'X';
+  //if game is tied
+  tied='';
+  //counting squares marked
+  clickedSquares=0;
 
   ngOnInit(){   
     // reset the board when loading component
@@ -32,6 +36,8 @@ export class AppComponent {
     this.xIsNext = true;
     this.currentPlayer = this.whosNext();
     this.winner = '';
+    this.tied = '';
+    this.clickedSquares = 0;
 
   }
 
@@ -43,20 +49,30 @@ export class AppComponent {
       // switch player
       this.xIsNext = !this.xIsNext;
       this.currentPlayer = this.whosNext();
+      this.clickedSquares+=1;
     }
     //check if there's a winner already
     this.winner = this.isWin();
+    //if no winner, the game is tied
+    if(this.clickedSquares == 9 && this.winner == ''){
+      this.tied = 'The game is tied! No winner this time :)';
+    }
   }
 
   //function to play randomly bot vs bot (no best path algorithm here, just random)
   async playBotVsBot(){
-    let squareNumbers = new Array();
-    while(this.winner == ''){
+    let squareNumbers = new Array<number>();
+    while(this.winner == '' && squareNumbers.length < 9){
       const snum =  this.randomIntFromInterval(0,8)
       if(!squareNumbers.includes(snum)){
-        this.play(snum);        
+        console.log('number not in array: ' + snum + ' len: ' + squareNumbers.length);
+        this.play(snum);   
+        squareNumbers.push(snum);     
         await delay(1000); 
       }
+    }
+    if(this.winner == '' && squareNumbers.length == 9){
+      this.tied = 'The game is tied! No winner this time :)';
     }
   }
 
